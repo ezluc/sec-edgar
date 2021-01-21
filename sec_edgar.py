@@ -14,7 +14,7 @@ def getCIKs(TICKERS):
         #print(URL)
         Page = urllib.request.urlopen(URL).read().decode('utf-8')
         #print(Page)
-        CIK_RE = re.findall(r'CIK=(S\d{9})', Page) or "NULL"
+        CIK_RE = re.findall(r'CIK=(S\d{9})', Page) or "NULL" # SERIES ID REGEX WOULD BE S\d{9}
         print(CIK_RE[0])
 tickers_sample = pd.read_csv("LIST.csv") # PATH TO custom list of symbols
 #print(tickers_sample)
